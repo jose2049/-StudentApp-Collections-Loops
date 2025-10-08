@@ -5,7 +5,15 @@ import java.util.Scanner;
 
 public class StudentApp {
 
-    ArrayList<String> names=new ArrayList<String>();
+    public static void main(String[] args) {
+    StudentClass s=new StudentClass();
 
+    System.out.println("Please enter your name: ");
+    s.setName(new Scanner(System.in).nextLine());
+    System.out.println("Please enter your email: ");
+    s.setEmail(new Scanner(System.in).nextLine());
+    System.out.println("Please enter your course name: ");
+    s.setCourse(new Scanner(System.in).nextLine());
 
+    }
 }
