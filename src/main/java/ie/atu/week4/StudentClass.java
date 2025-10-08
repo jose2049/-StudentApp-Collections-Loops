@@ -31,6 +31,6 @@ public class StudentClass {
 
     public void setCourse(String course) {
         this.course = course;
-        //
+
     }
 }
