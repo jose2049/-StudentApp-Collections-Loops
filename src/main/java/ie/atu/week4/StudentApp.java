@@ -25,6 +25,15 @@ public class StudentApp {
             s.setName(new Scanner(System.in).nextLine());
             System.out.println("Please enter your email: ");
             s.setEmail(new Scanner(System.in).nextLine());
+
+            //Checking whether the user has entered the same email address
+            for (StudentClass s1 : studentClassList) {
+                if (s1.getEmail().equals(s.getEmail())) {
+                    System.out.println("Your email is incorrect\n");
+                    System.out.println("Please enter a new email: ");
+                    s.setEmail(new Scanner(System.in).nextLine());
+                }
+            }
             System.out.println("Please enter your course name: ");
             s.setCourse(new Scanner(System.in).nextLine());         //Adding every instance to the List
             studentClassList.add(s);
