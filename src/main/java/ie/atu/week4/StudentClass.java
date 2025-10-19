@@ -1,6 +1,7 @@
 package ie.atu.week4;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -40,6 +41,19 @@ public class StudentClass {
     }   //Here I get the course name and return it when call it
 
     public void setCourse(String course) { this.course = course; }  //Here I update the course name with a new value
+
+    //Checking if the user has entered the same email address
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        StudentClass that = (StudentClass) o;
+        return Objects.equals(email, that.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(email);
+    }
 
     @Override       //This line builds and returns a string containing the values of name, email and course
     public String toString() {
